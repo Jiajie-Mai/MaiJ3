@@ -1,1 +1,1 @@
-This is the Spring term Software Development personal repo.
+This is the Jiajie Mai's Spring term Software Development personal repo.
