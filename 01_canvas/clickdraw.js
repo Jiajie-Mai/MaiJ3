@@ -1,7 +1,9 @@
-//Jiajie Mai
-//SoftDev2 pd6
-//K01-...and I want to Paint It Better
-//2019-01-31
+/*
+Jiajie Mai
+SoftDev2 pd6
+K01-...and I want to Paint It Better
+2019-01-31
+*/
 
 //variables for the canvas, canvas attributes, buttons, etc.
 var c = document.getElementById("slate");
