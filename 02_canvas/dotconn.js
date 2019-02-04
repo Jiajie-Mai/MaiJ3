@@ -11,6 +11,10 @@ var ctx = c.getContext("2d");
 var w = c.getAttribute("width");
 var h = c.getAttribute("height");
 var clr = document.getElementById('clear');
+//previous x and y
+var prevX = null;
+var prevY = null;
+var cleared = true;
 
 //add event listener for clear button and clear canvas as well as a console log
 clr.addEventListener(
@@ -18,8 +22,12 @@ clr.addEventListener(
     function(){
 	ctx.clearRect(0,0,w,h);
 	console.log("Cleared canvas.");
+	var prevX = null;
+	var prevY = null;
+	cleared = true;
+	console.log(prevX + ":" + prevY);
     }
-}
+)
 
 //add event listener to the canvas to react to clicks and add the corresponding chape
 c.addEventListener(
@@ -31,29 +39,28 @@ c.addEventListener(
 	console.log("color:" + color);
 	
 	//finds the place of the cursor
-	var x = event.clientX - c.offsetLeft;
-	var y = event.clientY - c.offsetTop;
-
-	//previous x and y
-	var prevX;
-	var prevY;
+	var x = event.clientX - c.offsetLeft - 5;
+	var y = event.clientY - c.offsetTop - 5;
 	
 	//makes a circle of radius 5
+	ctx.beginPath();
 	ctx.ellipse(x,y,5,5,Math.PI / 4, 0, 2 * Math.PI);
 	ctx.fill();
 
-	if(prevX != "undefined"){
-	    if(prevY == "undefined") {
-		console.log("Y has a value, but X doesn't. ???");
-	    } else {
-
-	    }
+	//checks for previous values and if not it does accordingly
+	if(prevX == null || cleared){
+	    console.log(prevX + ":" + prevY);
+	}else{
+	    //draws a line
+	    ctx.beginPath();
+	    ctx.moveTo(prevX,prevY);
+	    ctx.lineTo(x,y);
+	    ctx.stroke();
+	    console.log(prevX + "," + prevY + ":" + x + "," + y);
+	    //sets prevX and prevY
 	}
-	    
-
 	prevX = x;
 	prevY = y;
-	    
-	console.log( "(" + x + "," + y + ")" );
+	cleared = false;
     }
 )
