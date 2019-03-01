@@ -1,7 +1,9 @@
 #Jiajie mai
 #SoftDev2 pd6
 #K06 -- Yummy Mongo Py
-#2019-03-01  
+#2019-03-01
+
+import pymongo
 
 def sort_by_bourogh(borough):
     output = []
@@ -9,7 +11,7 @@ def sort_by_bourogh(borough):
     for i in found:
         output.append(i)
     return output
-    
+
 def sort_by_zip(zcode):
     output = []
     found = collection.find({"address.zipcode":zcode})
