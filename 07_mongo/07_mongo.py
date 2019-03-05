@@ -9,7 +9,7 @@ K07 -- Import/Export Bank
 Name- dadjokes.json
 Description- A list of posts on Reddit from the /r/dadjokes subreddit 
 Link- https://www.reddit.com/r/dadjokes.json
-Import mechanism- We downloaded the file from reddit (the dadjokes subreddit), named it dadjokes.json, and then insterted it into our new collection after loading it.
+Import mechanism- I downloaded the file from reddit (the dadjokes subreddit), named it dadjokes.json, and then inserted it into our new collection after loading it.
 '''
 
 import pymongo, json
@@ -20,7 +20,7 @@ db = connection.jj
 collection = db.dadjokes
 
 def sort_by_post( number ):
-    return collection.find({"data.children":number})
+    return collection.find({"children":number})
 
 def sort_by_at_least_ups( amount ):
     return collection.find({"$gt":{'ups':amount}})
