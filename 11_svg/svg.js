@@ -22,6 +22,7 @@ var animate = function(what) {
   var vels = new Array(dots.length);
   var x = new Array(dots.length);
   var y = new Array(dots.length);
+  var color = ["brown","blue","red","orange","green","black","white","yellow","purple"]
   for (i = 0; i < dots.length; i++) {
     vels[i] = [1,1];
     x[i] = Number(dots[i].getAttribute('cx'));
@@ -47,7 +48,7 @@ var animate = function(what) {
         }
         console.log(r + " " + increase)
       } else {
-        replacer.setAttribute('r', dots[curr].getAttribute('r'));
+        replacer.setAttribute('r', 10);
       }
       replacer.setAttribute('fill', dots[curr].getAttribute('fill'));
       replacer.setAttribute('stroke', dots[curr].getAttribute('stroke'));
@@ -144,4 +145,5 @@ what.addEventListener('click', function(e) {
       console.log("Only one dot.");
     }
   }
+
 })
