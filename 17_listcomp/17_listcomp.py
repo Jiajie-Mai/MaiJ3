@@ -64,16 +64,19 @@ def function6(num):
     print(result)
 	result = [x for x in range(num) if (x != 0 and x != 1 and x not in function5())]
 	print(result)
+    return result
 
 #need to fix
 def function7(matrix):
     result = []
-    for x in range(len(matrix)):
-        for y in range(len(matrix[x])):
-            result[y][x] = matrix[x][y]
+    for x in range(len(matrix[0])):
+        result.append([])
+        for y in range(len(matrix)):
+            result[x].append(matrix[y][x])
     print(result)
-	result = []
+	result = [ [ matrix[j][i] for j in range(len(matrix)) ] for i in range(len(matrix[0])) ]
 	print(result)
+    return result
 
 function1()
 function2()
