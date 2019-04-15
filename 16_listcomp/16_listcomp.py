@@ -1,3 +1,8 @@
+#Jiajie Mai
+#SoftDev2 pd6
+#K#16--Do You Even List?
+#2019-04-12
+
 def ps_checker(passwd):
 	symbl = ['.','?','!','&','#',',',';',':','-','_','*']
 	num_check = [x for x in passwd if x.isdigit()]
