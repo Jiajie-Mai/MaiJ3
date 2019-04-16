@@ -1,4 +1,4 @@
-x #Jiajie Mai
+#Jiajie Mai
 #SoftDev2 pd6
 #K#17--PPFTLCW
 #2019-04-15
@@ -38,42 +38,43 @@ def function3(list):
     print(result)
     return result
 
-#need to redo
-
 #composite numbers
 def function4():
     result = []
-    for x in range(101):
-       for y in range(x*2, 50, x):
-         result.append(y)
+    for x in range(2, 101):
+        sum = 0
+        for y in range(2, x):
+            if x % y == 0:
+                result.append(x)
+                break
 	print (result)
-	result = [x for y in range(1,101) for x in range(y*2, 50, y)]
+	result = [i for i in range(2, 101) if sum([1 if i % j == 0 else 0 for j in range(2, i)]) > 0]
 	print(result)
 	return result
-
-#need to redo
 
 #prime numbers
 def function5():
     result = []
-    for x in range(101):
-       for y in range(x*2, 50, x):
-         result.append(y)
+    for x in range(2, 101):
+        sum = 0
+        for y in range(2, x):
+            if x % y == 0:
+                sum += 1
+        if sum == 0:
+            result.append(x)
 	print (result)
-	result = [x for x in range(,101) if (x != 0 and x != 1 and x not in function4())]
+	result = [i for i in range(2, 101) if sum([1 if i % j == 0 else 0 for j in range(2, i)]) == 0]
 	print(result)
 	return result
-
-#need to redo
 
 #finding factors for a number
 def function6(num):
     result = []
-    if x for range(101):
-        if x != 0 and x != 1 and x not in function5()
+    if x for range(1,101):
+        if num % x:
             result.append(x)
     print(result)
-	result = [x for x in range(num) if (x != 0 and x != 1 and x not in function5())]
+	result = [x for x in range(1, n+1) if n % x == 0]
 	print(result)
     return result
 
@@ -89,6 +90,27 @@ def function7(matrix):
 	print(result)
     return result
 
+#pythagorean triple
+def function8(num):
+    result = []
+    for a in range(n+1):
+        for b in range(a):
+            for c in range(b):
+                if a*a == b*b + c*c:
+                    result.append(a, b, c)
+    print(result)
+    result = [(x,y,z) for x in range(1,num+1) for y in range(x,num+1) for z in range(y,num+1) if x**2 + y**2 == z**2]
+    print(result)
+
+#need to make it a single line
+#quick sort
+def function9(list):
+    if list == []:
+    return []
+    pivot = list[0]
+    l = qsort([x for x in list[1:] if x < pivot])
+    u = qsort([x for x in list[1:] if x >= pivot])
+
 function1()
 function2()
 function3()
@@ -96,3 +118,5 @@ function4()
 function5()
 function6(100)
 function7([[1,2,3],[4,5,6],[7,8,9]])
+function8(100)
+function9([3,4,1,2,2,0,9])
