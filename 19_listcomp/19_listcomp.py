@@ -123,16 +123,16 @@ def intersect(a,b):
     result = [x for x in a if x in b]
     print(result)
 
-def set_diff(u,a):
-    result = [x for x in u if x not in b]
-    print(result)
-
-def cart_prod(a,b):
-    result = [(x,y) for x in a for y in b]
+def set_dif(a,b):
+    result = [x for x in a if x not in b]
     print(result)
 
 def sym_dif(a,b):
     result = [x for x in a if x not in b] + [x for x in b if x not in a]
+    print(result)
+
+def cart_prod(a,u):
+    result = [(x,y) for x in a for y in u]
     print(result)
 
 function12(u,a)
@@ -147,6 +147,6 @@ function8(100)
 function9([3,4,1,2,2,0,9])
 union(a,b)
 intersect(a,b)
-set_diff(a,b)
-cart_prod(a,u)
+set_dif(a,b)
 sym_dif(a,b)
+cart_prod(a,u)
