@@ -1,7 +1,7 @@
 #Jiajie Mai
 #SoftDev2 pd6
-#K#17--PPFTLCW
-#2019-04-15
+#K#19--Ready, Set, Math!
+#2019-04-17
 
 a = [1,2,3]
 b = [2,3,4]
@@ -113,6 +113,28 @@ def function9(list):
     result = ((quickSort([y for y in l if y < l[0]]) + [l[0]] + quickSort([x for x in l if x > l[0]])) if len(l) > 2 else l)
     print(result)
 
+#union of sets a and b
+def union(a,b):
+    result = a + [x for x in b if x not in a]
+    print(result)
+
+#interection of sets a and b
+def intersect(a,b):
+    result = [x for x in a if x in b]
+    print(result)
+
+def set_diff(u,a):
+    result = [x for x in u if x not in b]
+    print(result)
+
+def cart_prod(a,b):
+    result = [(x,y) for x in a for y in b]
+    print(result)
+
+def sym_dif(a,b):
+    result = [x for x in a if x not in b] + [x for x in b if x not in a]
+    print(result)
+
 function12(u,a)
 function1()
 function2()
@@ -123,3 +145,8 @@ function6(100)
 function7([[1,2,3],[4,5,6],[7,8,9]])
 function8(100)
 function9([3,4,1,2,2,0,9])
+union(a,b)
+intersect(a,b)
+set_diff(a,b)
+cart_prod(a,u)
+sym_dif(a,b)
