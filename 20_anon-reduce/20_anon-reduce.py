@@ -1,10 +1,11 @@
 from functools import reduce
+from collections import Counter
 import os
 import re
 
 with open('Moby Dick.txt','r') as f:
     word = f.read()
-words = [x for x in re.split('[ \r\n]', word) if x != '']
+words = [x for x in re.split('[ \r\n]', word.lower()) if x != '']
 
 
 print(words)
@@ -19,3 +20,5 @@ def wordsFreq(w):
     return reduce((lambda x,y : x + y), [1 for x in [x for x in range(len(words)) if words[x] == ws[0]] if words[x:x + len(ws)] == ws])
 
 print(wordFreq('have'))
+
+print(Counter(words))
