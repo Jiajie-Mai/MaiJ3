@@ -36,7 +36,7 @@ def fib(n):
         return fib(n-1) + fib(n-2)
 
 print("Testing Fibonacci")
-i = randint(1,20)
+i = randint(20,40)
 print(fib(i))
 print("Fibonacci number for " + str(i))
 
@@ -50,6 +50,7 @@ def memoize(f):
         return memo[args]
     return helper
 
+@memoize
 def fib(n):
     if n == 0:
         return 0
@@ -59,5 +60,8 @@ def fib(n):
         return fib(n-1) + fib(n-2)
 
 print("\nNow doing the same thing but with a memoizing\n")
-fib = memoize(fib)
 print(fib(i))
+
+
+# *args
+# Used as a placeholder for function parameters within other functions    
